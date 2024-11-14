@@ -434,7 +434,7 @@
 
 
     #nav {
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 3s ease-in;
     }
 
     @keyframes fadeIn {
@@ -575,7 +575,7 @@
 
 
 
-    #warning {
+    #warning, #notavailable {
       display: none;
       position: absolute;
       top: 0;
@@ -590,6 +590,20 @@
       font-size: 6vh;
       font-family: 'Kalam';
     }
+    
+    #notavailable {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+      text-align: center;
+      color: white;
+      padding-top: 40vh;
+    }
     </style>
 
   <body oncontextmenu="return false;">
@@ -598,7 +612,8 @@
     <div class="marquee"><p>Note: some stroke indexes have changed on the Old Course.</p></div>
     
   -->
-
+    <div id="notavaialble"><img id="img" style="padding-top: 40vh; padding-right: 10vw;float: right; border: 0; height: 40vh; width: 80vw; " src="notavailable.png" alt="na"></div>
+    
     <div id="warning">Not available in landscape orientation</div>
 
 
@@ -617,7 +632,7 @@
     <section class="start">
       <div class="content">
         <div class="title">
-          <div class="pretitle">Longhirst seniors society</div>
+          <div class="pretitle">Liv golf society</div>
           <div class="spacer1"></div>
           <div>Winter golf</div>
         </div>
@@ -627,11 +642,11 @@
           <br>
           <br> <a class="dates" id="xdcomp1">searching for competitions ...</a> </div>
         <br>
-        <div class="flagicon" id="flagicon"> <img id="img" onclick="enlarge(this.id);" style="padding-right: 20px; float: right; border: 0; height: 40px; width: 40px; " src="seniorswhite.png" alt="logo"></div>
+        <div class="flagicon" id="flagicon"> <img id="img" onclick="enlarge(this.id);" style="padding-right: 20px; float: right; border: 0; height: 40px; width: 40px; " src="winter.svg" alt="logo"></div>
       </div>
     </section>
 
-    <img id="tooltip" style="padding-right: 20px; float: right; border: 0; height: 100px; width: 100px;" src="speech.gif" alt="speech">
+    <img id="tooltip" style="height: 100px; width: 100px; padding-right: 20px; float: right; border: 0;" src="speech.gif" alt="speech">
 
     <script>
     function isLocalStorageAvailable() {
@@ -1021,7 +1036,7 @@
     //====================================
 
     // speech tooltip
-    document.getElementById("tooltip").innerHTML = "Searching for data"
+    //document.getElementById("tooltip").innerHTML = "Searching for data"
     document.getElementById("tooltip").style.display = "block";
     
     // global code
@@ -1103,7 +1118,7 @@
       document.getElementById("nav").style.display = "block";
 
       // speech tooltip
-      document.getElementById("tooltip").innerHTML = "New data downloaded"
+      //document.getElementById("tooltip").innerHTML = "New data downloaded"
       setTimeout(function() {
         document.getElementById("tooltip").style.display = "none";
       }, 3000)
